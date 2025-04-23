@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | XPS</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/XPS.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/XPS.png" alt="XPS Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <div class="site-title-header">
+                    <h1><a href="index.html">Xanders Property Services</a></h1>
+                    <p class="site-subtitle">Paradise Seaview Farm, Calatagan, Batangas</p>
+                </div>
+
+                <div class="header-contact">
+                    <a href="tel:+639081228077" class="contact-link">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <span class="contact-text">0908 122 8077</span>
+                    </a>
+                    <a href="mailto:photoinspired2017@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="contact-text">photoinspired2017@gmail.com</span>
+                   </a>
+                </div>            
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Interactive Map</a></li>
+                <li><a href="lots.html">Available Lots</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <h2>The Gallery</h2>
+        <p style="color: #305c14;">Take a virtual sneak peek of the sublime sights and delightful local amenities by browsing through our gallery. Click on an image for a larger view (not yet available; a future enhancement).</p>
+
+        <section class="gallery-container">
+            <h3 style="color: #345521;">Property Gallery</h3>
+            <div class="image-grid">
+                <img src="images/Untitled video - Made with Clipchamp (2).gif" alt="XPS" class="gallery-image">
+                <img src="images/Untitled video - Made with Clipchamp (1).gif" alt="XPS" class="gallery-image">
+                <img src="images/20250418_072829.jpg" alt="XPS" class="gallery-image">
+                <img src="images/20250418_074844.jpg" alt="XPS" class="gallery-image">
+                <img src="images/20250418_073105.jpg" alt="XPS" class="gallery-image">
+                <img src="images/20250418_072707.jpg" alt="XPS" class="gallery-image">
+                <img src="images/20250418_072730.jpg" alt="XPS" class="gallery-image">
+                <img src="images/20250418_072737.jpg" alt="XPS" class="gallery-image">
+                <img src="images/765fd277-1aed-4409-946c-ad6d6c5e8380.jpg" alt="XPS" class="gallery-image">
+            </div>
+
+            <h3 style="margin-top: 2rem; color: #345521;">Nearby Amenities</h3>
+            <div class="image-grid">
+                <img src="images/2.jpeg" alt="XPS" class="gallery-image">
+                <img src="images/3 (1).jpg" alt="XPS" class="gallery-image">
+                <img src="images/park.jpg" alt="XPS" class="gallery-image">
+                <img src="images/pandyshadd.jpg" alt="XPS" class="gallery-image">
+                <img src="images/thebeach.jpg" alt="XPS" class="gallery-image">
+                <img src="images/lascasas.jpg" alt="XPS" class="gallery-image">
+            </div>
+        </section>
+        
+    </main>
+
+    <button id="backToTop" title="Back to Top">↑</button>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/realestateagentbatangas/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p>© 2025 Xanders Property Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        anime({
+            targets: '.page-content',
+            opacity: [0, 1],
+            duration: 1000,
+            easing: 'easeOutExpo'
+        });
+
+        const backToTopButton = document.getElementById("backToTop");
+    
+        window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 600) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+        });
+    
+        backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | XPS</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/XPS.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/XPS.png" alt="XPS Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <div class="site-title-header">
+                    <h1><a href="index.html">Xanders Property Services</a></h1>
+                    <p class="site-subtitle">Paradise Seaview Farm, Calatagan, Batangas</p>
+                </div>
+
+                <div class="header-contact">
+                    <a href="tel:+639081228077" class="contact-link">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <span class="contact-text">0908 122 8077</span>
+                    </a>
+                    <a href="mailto:photoinspired2017@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="contact-text">photoinspired2017@gmail.com</span>
+                   </a>
+                </div>            
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Interactive Map</a></li>
+                <li><a href="lots.html">Available Lots</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <h2>About XPS</h2>
+
+        <img src="images/f57bddf3-7542-492d-bc2c-1d852a7f5c8f.jpg" alt="XPS" style="width:100%; max-width: 600px; height:auto; box-shadow: 0 0 20px rgba(0, 47, 0, 0.7); border-radius: 8px; margin: 1rem auto; display: block;">
+        
+        <h3 style="color: #345521;">Who Am I?</h3>
+        <p style="color: #305c14;"><strong>My name is Rosita Pablo, but you may call me Aileen! I am the owner of Xanders Property Services (XPS).</strong><br>Before XPS, I was a real estate agent for nearly 5 years, focusing primarily on properties in municipalities within the province of Batangas, such as Lian, Nasugbu, Batangas City, and Calatagan. With the knowledge and experience I have gained from my years working hard as an agent in the realty sector, I decided to start my own business for buying and selling properties.<br><br> We pride ourselves on upholding the values of transparency and integrity, and a commitment to treating our clients like our own neighbors...because that’s exactly what they are! I named the business after my son, Alexander. He is also the one who designed and built this website, stemming from his desire to help me with my work, and accomplished by means of completing the Work Immersion program as part of his SHS graduation requirements. <br><br><strong>We hope you enjoy the site. Thank you, and God bless!</strong></p>
+    </main>
+
+    <button id="backToTop" title="Back to Top">↑</button>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/realestateagentbatangas/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p>© 2025 Xanders Property Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        anime({
+            targets: '.page-content',
+            opacity: [0, 1],
+            duration: 1000,
+            easing: 'easeOutExpo'
+        });
+
+        const backToTopButton = document.getElementById("backToTop");
+    
+        window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+        });
+    
+        backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
