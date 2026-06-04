@@ -11,15 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "7, Block 1": { sqm: 1029, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "8, Block 1": { sqm: 1029, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "9, Block 1": { sqm: 1029, price: "₱1,500 per sqm", status: "Available", notes: "" },
-        "10, Block 1": { sqm: 1029, price: "₱1,500 per sqm", status: "Available", notes: "" },
-        "11, Block 1": { sqm: 1500, price: "₱1,800 per sqm", status: "Available", notes: "Premium lot." },
+        "10, Block 1": { sqm: 500, price: "₱-------", status: "Sold", notes: "" },
+        "11, Block 1": { sqm: 3348, price: "₱-------", status: "Sold", notes: "Premium lot." },
         "12, Block 1": { sqm: 1819, price: "₱-------", status: "Sold", notes: "" },
         "13, Block 1": { sqm: 1000, price: "₱-------", status: "Sold", notes: "" },
         "14, Block 1": { sqm: 908, price: "₱-------", status: "Sold", notes: "" },
         "1, Block 2": { sqm: 745, price: "₱-------", status: "Sold", notes: "" },
         "1, Block 3": { sqm: 1184, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "2, Block 3": { sqm: 1024, price: "₱1,800 per sqm", status: "Available", notes: "Premium lot." },
-        "3, Block 3": { sqm: 1148, price: "₱1,800 per sqm", status: "Available", notes: "Premium lot." },
+        "3, Block 3": { sqm: 2332, price: "₱1,800 per sqm", status: "Available", notes: "Premium lot." },
         "4, Block 3": { sqm: 500, price: "₱-------", status: "Sold", notes: "" },
         "5, Block 3": { sqm: 742, price: "₱-------", status: "Sold", notes: "" },
         "6, Block 3": { sqm: 1000, price: "₱-------", status: "Sold", notes: "" },
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "5, Block 4": { sqm: 753, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "6, Block 4": { sqm: 754, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "7, Block 4": { sqm: 969, price: "₱1,500 per sqm", status: "Available", notes: "" },
-        "1, Block 5": { sqm: 1205, price: "₱1,500 per sqm", status: "Available", notes: "" },
+        "1, Block 5": { sqm: 1305, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "2, Block 5": { sqm: 813, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "4, Block 5": { sqm: 1204, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "3, Block 5": { sqm: 1033, price: "₱1,500 per sqm", status: "Available", notes: "" },
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailStatus = document.getElementById('detail-status');
     const detailNotes = document.getElementById('detail-notes');
 
-    let activeLotElement = null; // keep track of currently hovered lot
+    let activeLotElement = null;
 
     // --- functions ---
 
@@ -69,15 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
             detailStatus.textContent = data.status;
             detailNotes.textContent = data.notes || '---'; // 
 
-            // status class based on data
             detailStatus.className = `status ${data.status}`; // class
 
-            // show/hide notes based on data
-             detailNotes.style.display = data.notes ? 'block' : 'none';
+            detailNotes.style.display = data.notes ? 'block' : 'none';
 
 
         } else {
-            // if no data found for lotId, reset sidebar
             resetSidebar();
         }
     }
@@ -94,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         detailStatus.textContent = '---';
         detailStatus.className = 'status'; // 
         detailNotes.textContent = '---';
-        detailNotes.style.display = 'none'; // hide notes by default
+        detailNotes.style.display = 'none';
 
     }
 
@@ -104,26 +101,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const lotId = path.dataset.lotId;
             const data = lotData[lotId];
             if (data) {
-                path.classList.add(data.status.toLowerCase()); // add class
+                path.classList.add(data.status.toLowerCase()); 
             } else {
-                 path.classList.add('unavailable'); // or some default/error class
-                 path.style.fill = '#cccccc'; // default grey if no data
+                 path.classList.add('unavailable'); 
+                 path.style.fill = '#cccccc';
             }
         });
     }
 
     // --- event listeners ---
     lotPaths.forEach(path => {
-        // mouse enters lot area
+        // mouse hovering
         path.addEventListener('mouseenter', (event) => {
             const lotId = event.target.dataset.lotId;
 
-            // remove active state from previously hovered lot
+            // remove active state
             if (activeLotElement && activeLotElement !== event.target) {
                 activeLotElement.classList.remove('active-hover');
             }
 
-            // add active state to current lot and update global tracker
+            // add active state, update global tracker 
             event.target.classList.add('active-hover');
             activeLotElement = event.target;
 
@@ -132,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // mouse leaves lot area
+    // mouse leaves
      svgMap.addEventListener('mouseleave', () => {
          if (activeLotElement) {
              activeLotElement.classList.remove('active-hover');
