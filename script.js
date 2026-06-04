@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "5, Block 4": { sqm: 753, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "6, Block 4": { sqm: 754, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "7, Block 4": { sqm: 969, price: "₱1,500 per sqm", status: "Available", notes: "" },
-        "1, Block 5": { sqm: 1305, price: "₱1,500 per sqm", status: "Available", notes: "" },
+        "1, Block 5": { sqm: 4475, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "2, Block 5": { sqm: 813, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "4, Block 5": { sqm: 1204, price: "₱1,500 per sqm", status: "Available", notes: "" },
         "3, Block 5": { sqm: 1033, price: "₱1,500 per sqm", status: "Available", notes: "" },
